@@ -1,11 +1,12 @@
 import { Router } from "express"
+import userRegisterDTO from "../dto/user-register.dto.js"
 
 const userRouter = Router()
 
 
 userRouter.get("/profile", (req, res) => {})
 
-userRouter.post("/register", (req, res) => {})
+userRouter.post("/register", userRegisterDTO)
 
 userRouter.post("/login", (req, res) => {})
 
