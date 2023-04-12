@@ -1,4 +1,4 @@
-import UserModel from "../schemas/user-schema"
+import UserModel from "../schemas/user-schema.js"
 import { hash } from "bcrypt"
 
 const userRegisterController = async(req, res) => {

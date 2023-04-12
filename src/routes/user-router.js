@@ -8,17 +8,19 @@ import userUnregisterDTO from "../dto/user-unregister.dto.js"
 import userJWTDTO from "../dto/user-jwt.dto.js"
 import userRegisterController from "../controllers/user-register.controller.js"
 import userLoginController from "../controllers/user-login.controller.js"
+import userUpdateDataController from "../controllers/user-update.data.controller.js"
+import userProfileController from "../controllers/user-profile.controller.js"
 
 const userRouter = Router()
 
 
-userRouter.get("/profile", userJWTDTO)
+userRouter.get("/profile", userJWTDTO, userProfileController)
 
 userRouter.post("/register", userRegisterDTO, userRegisterController)
 
 userRouter.post("/login", userLoginDTO, userLoginController)
 
-userRouter.patch("/update-data", userJWTDTO, userUpdateDataDTO, )
+userRouter.patch("/update-data", userJWTDTO, userUpdateDataDTO, userUpdateDataController)
 
 userRouter.patch("/update-email", userJWTDTO, userUpdateEmailDTO)
 
