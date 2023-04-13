@@ -10,6 +10,8 @@ import userRegisterController from "../controllers/user-register.controller.js"
 import userLoginController from "../controllers/user-login.controller.js"
 import userUpdateDataController from "../controllers/user-update.data.controller.js"
 import userProfileController from "../controllers/user-profile.controller.js"
+import userUpdateEmailController from "../controllers/user-update.email.controller.js"
+import userUpdatePasswordController from "../controllers/user-update.password.controller.js"
 
 const userRouter = Router()
 
@@ -22,9 +24,9 @@ userRouter.post("/login", userLoginDTO, userLoginController)
 
 userRouter.patch("/update-data", userJWTDTO, userUpdateDataDTO, userUpdateDataController)
 
-userRouter.patch("/update-email", userJWTDTO, userUpdateEmailDTO)
+userRouter.patch("/update-email", userJWTDTO, userUpdateEmailDTO, userUpdateEmailController)
 
-userRouter.patch("/update-password", userJWTDTO, userUpdatePasswordDTO)
+userRouter.patch("/update-password", userJWTDTO, userUpdatePasswordDTO, userUpdatePasswordController)
 
 userRouter.delete("/unregister", userJWTDTO, userUnregisterDTO)
 
